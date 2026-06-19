@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700;800;900&display=swap');
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-brand-indigo: #5c67f2;
+  --color-brand-sunshine: #ffb703;
+  --color-brand-mint: #2ec4b6;
+  --color-brand-bubblegum: #ff007f;
+  --color-brand-purple: #8338ec;
+  --color-brand-dark: #2b2d42;
+  
+  --font-sans: 'Nunito', sans-serif;
+  --font-display: 'Fredoka', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#FCFDFF] text-[#2B2D42] font-sans antialiased scroll-smooth;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+}
+
+/* Playful grid background with soft colorful circles */
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(92, 103, 242, 0.03) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, rgba(92, 103, 242, 0.03) 1.5px, transparent 1.5px);
+  background-size: 30px 30px;
+}
+
+.playful-gradient-bg {
+  background: radial-gradient(circle at 10% 20%, rgba(92, 103, 242, 0.05) 0%, rgba(255, 183, 3, 0.04) 90%);
+}
+
+.child-card {
+  @apply bg-white border-2 border-slate-100 rounded-[32px] transition-all duration-300;
+  box-shadow: 0 8px 0px rgba(92, 103, 242, 0.04);
+}
+
+.child-card:hover {
+  @apply border-brand-indigo/30;
+  box-shadow: 0 16px 20px rgba(92, 103, 242, 0.06);
+  transform: translateY(-4px);
+}
+
+/* Float animations for playful icons */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(3deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float-slow {
+  animation: float 5s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out forwards;
+}
