@@ -377,7 +377,7 @@ function Dashboard({ onLogout }: { onLogout: () => void }) {
               <RefreshCw className="w-6 h-6 text-brand-indigo animate-spin mx-auto mb-3" />
               <p className="text-slate-500 text-sm font-bold">Loading enquiries...</p>
             </div>
-          ) : data?.data.length === 0 ? (
+          ) : !data || data.data.length === 0 ? (
             <div className="py-16 text-center">
               <Users className="w-8 h-8 text-slate-700 mx-auto mb-3" />
               <p className="text-slate-500 font-bold text-sm">
