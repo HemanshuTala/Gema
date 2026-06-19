@@ -1,0 +1,13 @@
+[build]
+  command   = "npm run build"
+  publish   = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Redirect all routes to index.html so React Router handles client-side navigation.
+# Without this, refreshing any page other than "/" returns a 404 from Netlify's CDN.
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
